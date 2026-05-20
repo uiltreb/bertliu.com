@@ -1,0 +1,269 @@
+---
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capabilities — Bert Liu</title>
+    <style>
+      :root {
+        --bg: #f7f4ed;
+        --text: #1f1f1b;
+        --muted: #4e4a42;
+        --line: #d8d2c5;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        overflow-y: scroll;
+        scrollbar-gutter: stable;
+      }
+
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.65;
+      }
+
+      .page {
+        width: min(1100px, 100%);
+        margin: 0 auto;
+        padding: 40px 24px 80px;
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        column-gap: 56px;
+      }
+
+      nav {
+        position: sticky;
+        top: 48px;
+        align-self: start;
+        width: 180px;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        padding-bottom: 2px;
+      }
+
+      nav a:hover,
+      nav a:focus-visible {
+        color: var(--text);
+        border-bottom-color: var(--line);
+      }
+
+      main {
+        grid-column: 2;
+        max-width: 750px;
+      }
+
+      .intro {
+        padding: 0 0 28px;
+      }
+
+      .intro-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2.1rem, 5vw, 3rem);
+        font-weight: 500;
+        letter-spacing: 0.01em;
+      }
+
+      .intro-links {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .intro-links a {
+        color: var(--muted);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        padding-bottom: 1px;
+      }
+
+      .intro-links a:hover,
+      .intro-links a:focus-visible {
+        color: var(--text);
+        border-bottom-color: var(--line);
+      }
+
+      .intro p,
+      p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .intro p {
+        max-width: 60ch;
+        font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+      }
+
+      section {
+        padding: 36px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      h2 {
+        margin: 0 0 12px;
+        font-size: 1.45rem;
+        font-weight: 500;
+      }
+
+      .capability-list {
+        display: grid;
+        gap: 28px;
+      }
+
+      .capability h3 {
+        margin: 0 0 6px;
+        font-size: 1.25rem;
+      }
+
+      @media (max-width: 900px) {
+        .page {
+          display: block;
+          padding: 20px 20px 56px;
+        }
+
+        nav {
+          position: static;
+          width: auto;
+          margin-bottom: 24px;
+          border-bottom: 1px solid var(--line);
+          padding-bottom: 12px;
+        }
+
+        nav ul {
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 10px 18px;
+        }
+
+        .intro-head {
+          align-items: flex-end;
+          flex-wrap: wrap;
+          margin-bottom: 10px;
+        }
+
+        section {
+          padding: 28px 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="/">Worklog</a></li>
+          <li><a href="/capabilities">Capabilities</a></li>
+          <li><a href="/experiments">Experiments</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <header class="intro">
+          <div class="intro-head">
+            <h1>Bert Liu</h1>
+            <div class="intro-links" aria-label="Social links">
+              <a href="#" aria-label="LinkedIn">in</a>
+              <a href="#" aria-label="Instagram">ig</a>
+              <a href="mailto:hello@example.com" aria-label="Email">✉</a>
+            </div>
+          </div>
+          <p>Manufacturing in Taiwan. Notes on factories, health, and experiments.</p>
+        </header>
+
+        <section>
+  <h2>Capabilities</h2>
+  <p>
+    Most real products are not made by one process or one factory. They move
+    through a stack: material → forming → machining → finishing → inspection →
+    assembly. I’m interested in how those steps connect, where problems show up,
+    and what makes the system repeatable.
+  </p>
+</section>
+
+<section class="capability-list">
+  <div class="capability">
+    <h3>Casting & Forming</h3>
+    <p>
+      Die casting, gravity casting, investment casting, and forging. Notes on
+      tooling, material flow, porosity, machining allowances, mechanical
+      properties, surface finish compatibility, and production scale.
+    </p>
+  </div>
+
+  <div class="capability">
+    <h3>CNC Machining</h3>
+    <p>
+      Secondary machining, tight-tolerance features, fixtures, datum strategy,
+      inspection, and process stacking after casting, forging, or fabrication.
+    </p>
+  </div>
+
+  <div class="capability">
+    <h3>Stamping / Sheet Metal</h3>
+    <p>
+      Progressive tooling, copper heat sinks, fin pitch consistency, flatness,
+      burr control, tool wear, and high-volume repeatability.
+    </p>
+  </div>
+
+  <div class="capability">
+    <h3>Surface Finishing</h3>
+    <p>
+      Powder coating, anodizing, masking, passivation, coating thickness, color
+    consistency, corrosion resistance, and basic finish checks such as scratch
+    and adhesion testing.
+    </p>
+  </div>
+
+  <div class="capability">
+    <h3>Quality / Traceability</h3>
+    <p>
+      Material COC / COA, SGS testing, inspection records, traceability, ISO 9001
+      as a baseline, 8D corrective action reporting, packaging control, and
+      repeatability from sample approval to production.
+    </p>
+  </div>
+
+  <div class="capability">
+    <h3>Assembly / Supplier Coordination</h3>
+    <p>
+      Practical systems for supplier communication, sub-supplier coordination,
+      production follow-up, packaging, documentation, and day-to-day execution
+      across multiple process steps.
+    </p>
+  </div>
+</section>
+      </main>
+    </div>
+  </body>
+</html>

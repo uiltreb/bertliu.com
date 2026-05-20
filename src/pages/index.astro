@@ -1,0 +1,779 @@
+---
+import castingLeaktesting from "../assets/articles/bert-casting-leaktesting.png";
+import progressiveStampingHeatsinks from "../assets/articles/bert-progressive-stamping-heatsinks.png";
+import manufacturingScale1 from "../assets/articles/bert-post-manufacturing-scale-1.png";
+import manufacturingScale2 from "../assets/articles/bert-post-manufacturing-scale-2.png";
+import manufacturingScale3 from "../assets/articles/bert-post-manufacturing-scale-3.png";
+import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scale-4.png";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bert Liu</title>
+    <style>
+      :root {
+        --bg: #f7f4ed;
+        --text: #1f1f1b;
+        --muted: #4e4a42;
+        --line: #d8d2c5;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        overflow-y: scroll;
+        scrollbar-gutter: stable;
+      }
+
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.65;
+      }
+
+      h1,
+      h2,
+      h3,
+      nav,
+      .intro-links,
+      .article-date,
+      .carousel-status {
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+      }
+
+      .page {
+        width: min(1100px, 100%);
+        margin: 0 auto;
+        padding: 40px 24px 80px;
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        column-gap: 56px;
+      }
+
+      nav {
+        position: sticky;
+        top: 48px;
+        align-self: start;
+        width: 180px;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        padding-bottom: 2px;
+      }
+
+      nav a:hover,
+      nav a:focus-visible {
+        color: var(--text);
+        border-bottom-color: var(--line);
+      }
+
+      nav a[aria-current="page"] {
+        color: var(--text);
+        font-weight: 600;
+        border-bottom-color: var(--line);
+      }
+
+      main {
+        grid-column: 2;
+        max-width: 750px;
+      }
+
+      .intro {
+        padding: 0 0 28px;
+      }
+
+      .intro-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 16px;
+        margin: 0 0 4px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2.1rem, 5vw, 3rem);
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        line-height: 1.05em;
+      }
+
+      .intro-links {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .intro-links a {
+        color: var(--muted);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        padding-bottom: 1px;
+      }
+
+      .intro-links a:hover,
+      .intro-links a:focus-visible {
+        color: var(--text);
+        border-bottom-color: var(--line);
+      }
+
+      .intro p {
+        margin: 0;
+        max-width: 60ch;
+        color: var(--muted);
+        font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+      }
+
+      section {
+        padding: 36px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      h2 {
+        margin: 0 0 12px;
+        font-size: 1.45rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+
+      p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .feature-article {
+        display: grid;
+        grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+        gap: 24px;
+        align-items: start;
+      }
+
+      .article-header {
+        margin: 0 0 16px;
+      }
+
+      .article-title {
+        margin: 0 0 6px;
+        color: var(--text);
+        font-size: clamp(1.35rem, 2.6vw, 1.8rem);
+        font-weight: 700;
+        line-height: 1.25;
+        letter-spacing: -0.01em;
+      }
+
+      .article-date {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.88rem;
+        letter-spacing: 0.01em;
+        line-height: 1.5;
+      }
+
+      .article-images {
+        margin: 0;
+        display: grid;
+        gap: 10px;
+      }
+
+      .article-images img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 1px solid var(--line);
+      }
+
+      .article-images video {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 1px solid var(--line);
+        background: #000;
+      }
+
+      .carousel-controls {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .carousel-thumb {
+        width: 56px;
+        height: 56px;
+        padding: 0;
+        border: 1px solid var(--line);
+        background: transparent;
+        cursor: pointer;
+        overflow: hidden;
+      }
+
+      .carousel-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .carousel-thumb.active {
+        border-color: var(--text);
+      }
+
+      .carousel-status {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .article-body p + p {
+        margin-top: 14px;
+      }
+
+      .article-list {
+        margin: 10px 0 14px 20px;
+        padding: 0;
+        color: var(--muted);
+      }
+
+      .article-list li + li {
+        margin-top: 3px;
+      }
+
+      .text-article {
+        margin-top: 42px;
+        padding-top: 34px;
+        border-top: 1px solid var(--line);
+      }
+
+      .worklog-post + .worklog-post {
+        margin-top: 56px;
+        padding-top: 42px;
+        border-top: 1px solid var(--line);
+      }
+
+      @media (max-width: 900px) {
+        .page {
+          display: block;
+          padding: 20px 20px 56px;
+        }
+
+        nav {
+          position: static;
+          width: auto;
+          margin-bottom: 24px;
+          border-bottom: 1px solid var(--line);
+          padding-bottom: 12px;
+        }
+
+        nav ul {
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 10px 18px;
+        }
+
+        .intro {
+          padding: 0 0 24px;
+        }
+
+        .intro-head {
+          align-items: flex-end;
+          flex-wrap: wrap;
+          margin-bottom: 10px;
+        }
+
+        section {
+          padding: 28px 0;
+        }
+
+        .feature-article {
+          grid-template-columns: 1fr;
+        }
+
+        .article-images {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="/" aria-current="page">Worklog</a></li>
+          <li><a href="/capabilities">Capabilities</a></li>
+          <li><a href="/experiments">Experiments</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <header class="intro">
+          <div class="intro-head">
+            <h1>Bert Liu</h1>
+            <div class="intro-links" aria-label="Social links">
+              <a href="#" aria-label="LinkedIn">in</a>
+              <a href="#" aria-label="Instagram">ig</a>
+              <a href="mailto:hello@example.com" aria-label="Email">✉</a>
+            </div>
+          </div>
+          <p>
+            Manufacturing in Taiwan. Notes on factories, health, and
+            experiments.
+          </p>
+        </header>
+
+        <section id="worklog">
+          <article class="worklog-post">
+            <div class="article-header">
+              <h3 class="article-title">
+                Why Smart Brands Don’t Build Everything
+              </h3>
+              <p class="article-date">
+                <strong>May 15, 2026</strong> · Taoyuan, Taiwan · Die Casting / CNC / Surface Prep / Quality / Coating
+              </p>
+            </div>
+
+            <div class="feature-article">
+              <div class="article-images">
+                <video
+                  controls
+                  preload="metadata"
+                  playsinline
+                  src="/videos/worklog/manufacturing_video_note_001.mp4"
+                ></video>
+              </div>
+
+              <div class="article-body">
+                <p>Manufacturing isn’t a single process. It’s a system.</p>
+
+                <p>
+                  A part can move through die casting, surface prep, X-ray
+                  inspection, CMM measurement, painting, masking, packaging, and
+                  logistics before it is ready.
+                </p>
+
+                <p>
+                  The real question for hardware brands is not whether to
+                  outsource everything or build everything.
+                </p>
+
+                <p>
+                  It is what you should control directly, and what you should
+                  scale through trusted partners.
+                </p>
+
+                <p>
+                  Still improving the filming and audio, but this is the start.
+                </p>
+              </div>
+            </div>
+          </article>
+          <article class="worklog-post">
+            <div class="article-header">
+              <h3 class="article-title">
+                Scaling Manufacturing Without Operational Debt
+              </h3>
+              <p class="article-date">
+                <strong>May 8, 2026</strong> · Homebase · CNC / Supply Chain / Strategy
+              </p>
+            </div>
+
+            <div class="feature-article">
+              <div class="article-images" data-carousel>
+                <img
+                  data-carousel-image
+                  src={manufacturingScale1.src}
+                  alt="Manufacturing scaling post image 1."
+                  loading="lazy"
+                />
+
+                <div
+                  class="carousel-controls"
+                  aria-label="Article image carousel controls"
+                >
+                  <button
+                    class="carousel-thumb active"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="0"
+                  >
+                    <img
+                      src={manufacturingScale1.src}
+                      alt="Thumbnail 1"
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="carousel-thumb"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="1"
+                  >
+                    <img
+                      src={manufacturingScale2.src}
+                      alt="Thumbnail 2"
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="carousel-thumb"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="2"
+                  >
+                    <img
+                      src={manufacturingScale3.src}
+                      alt="Thumbnail 3"
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="carousel-thumb"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="3"
+                  >
+                    <img
+                      src={manufacturingScale4.src}
+                      alt="Thumbnail 4"
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <span class="carousel-status" data-carousel-status>1 / 4</span
+                  >
+                </div>
+              </div>
+
+              <div class="article-body">
+                <p>
+                  I’m a big fan of engineering content on YouTube, and what
+                  Hacksmith built is impressive.
+                </p>
+
+                <p>
+                  This isn’t an insider case study. It’s just how I think about
+                  manufacturing scaling decisions.
+                </p>
+
+                <p>
+                  A hit product can validate demand. But it does not
+                  automatically justify taking on a much heavier operating
+                  model.
+                </p>
+
+                <p>
+                  That’s where things can shift from product momentum into
+                  operational debt: machinery, hires, management, training, QC
+                  systems, maintenance, internal systems, and monthly operating
+                  burn.
+                </p>
+
+                <p>
+                  To me, there are usually three paths: full in-house, full
+                  outsource, or the middle path — validate trusted suppliers,
+                  forecast demand, and keep only critical layers in-house.
+                </p>
+
+                <p>
+                  That middle path is often the smartest one for businesses
+                  whose original engine is still brand, product, and audience.
+                </p>
+
+                <p>
+                  The goal isn’t to outsource everything or build everything.
+                  It’s to know what to protect, what to outsource, and when to
+                  scale each layer.
+                </p>
+
+                <p>
+                  If you’re thinking through similar manufacturing scaling
+                  decisions, feel free to reach out.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="worklog-post">
+            <div class="article-header">
+              <h3 class="article-title">
+                Reshoring Doesn’t Mean Bringing Everything Back
+              </h3>
+              <p class="article-date">
+                <strong>April 30, 2026</strong> · Homebase · Reshoring / Supply Chain
+                / Strategy
+              </p>
+            </div>
+
+            <div class="feature-article">
+              <div class="article-images">
+                <video
+                  controls
+                  preload="metadata"
+                  playsinline
+                  src="/videos/worklog/bert-reshoring-observation-video.mp4"
+                ></video>
+              </div>
+
+              <div class="article-body">
+                <p>Reshoring doesn’t mean bringing everything back.</p>
+
+                <p>
+                  What parts of manufacturing are actually critical, and what
+                  parts are not?
+                </p>
+
+                <p>Some things may need to stay close to home:</p>
+
+                <ul class="article-list">
+                  <li>final assembly</li>
+                  <li>sensitive testing</li>
+                  <li>software / electronics integration</li>
+                  <li>critical dimensions</li>
+                  <li>anything that protects real IP</li>
+                </ul>
+
+                <p>
+                  Other things may still be better handled by the right
+                  specialists:
+                </p>
+
+                <ul class="article-list">
+                  <li>castings</li>
+                  <li>standard CNC</li>
+                  <li>paint / surface finish</li>
+                  <li>injection molding</li>
+                  <li>sheet metal fab</li>
+                  <li>non-critical subcomponents</li>
+                </ul>
+
+                <p>
+                  So I don’t think the answer is full outsourcing or full
+                  reshoring.
+                </p>
+
+                <p>
+                  I think the real competitive advantage is knowing what to
+                  protect, what to outsource, and how to split the risk without
+                  losing the product.
+                </p>
+              </div>
+            </div>
+          </article>
+          <article class="worklog-post">
+            <div class="article-header">
+              <h3 class="article-title">Precision Is Not One Process</h3>
+              <p class="article-date">
+                <strong>March 30, 2026</strong> · Kunshan, China · Die Casting / CNC
+                / Stamping
+              </p>
+            </div>
+            <div class="feature-article">
+              <div class="article-images" data-carousel>
+                <img
+                  data-carousel-image
+                  src={castingLeaktesting.src}
+                  alt="Bert standing in a workshop beside large die-casting equipment and parts."
+                  loading="lazy"
+                />
+                <div
+                  class="carousel-controls"
+                  aria-label="Article image carousel controls"
+                >
+                  <button
+                    class="carousel-thumb active"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="0"
+                    aria-label="Show die-cast photo"
+                  >
+                    <img
+                      src={castingLeaktesting.src}
+                      alt="Thumbnail of die-cast workshop photo"
+                      loading="lazy"
+                    />
+                  </button>
+                  <button
+                    class="carousel-thumb"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="1"
+                    aria-label="Show heat sink photo"
+                  >
+                    <img
+                      src={progressiveStampingHeatsinks.src}
+                      alt="Thumbnail of heat sink manufacturing photo"
+                      loading="lazy"
+                    />
+                  </button>
+                  <span class="carousel-status" data-carousel-status>1 / 2</span
+                  >
+                </div>
+              </div>
+              <div class="article-body">
+                <p>
+                  Precision looks very different depending on how a part is
+                  made.
+                </p>
+                <p>
+                  On one end: thin-fin copper heat sinks (stamped at high
+                  volume) > tight fin spacing (pitch control) > tool wear over
+                  long runs > consistency at micro scale.
+                </p>
+                <p>
+                  In some cases, final adjustments are still done by hand -
+                  using precision tools to align and assemble components into a
+                  larger structure.
+                </p>
+                <p>
+                  On the other: large aluminum die-cast housings > material flow
+                  > thermal behavior > structural integrity at scale (porosity,
+                  leak paths).
+                </p>
+                <p>
+                  Both require precision - but in completely different ways. And
+                  what is often overlooked is this: precision does not come from
+                  a single process.
+                </p>
+                <p>
+                  It comes from how processes stack - as a system. Casting for
+                  shape at scale, then machining where tolerances actually
+                  matter.
+                </p>
+                <p>
+                  That is where real manufacturing capability shows up. Not all
+                  precision is created equal.
+                </p>
+              </div>
+            </div>
+          </article>
+          <article class="worklog-post text-article">
+            <div class="article-header">
+              <h3 class="article-title">
+                Manufacturing Is a System, Not a Location
+              </h3>
+              <p class="article-date">
+                <strong>March 1, 2026</strong> · Homebase · Supply Chain / Strategy
+              </p>
+            </div>
+
+            <div class="article-body">
+              <p>
+                I’ve spent the past few years around manufacturing across Taiwan
+                and China, and one thing that stood out is how misunderstood it
+                is.
+              </p>
+
+              <p>
+                Most people think it’s about choosing a country. China vs
+                Vietnam. Mexico vs Asia.
+              </p>
+
+              <p>
+                That’s the wrong way to think about it. You don’t choose a
+                country. You design a supply chain system.
+              </p>
+
+              <p>
+                China → scale and ecosystem depth<br />
+                Vietnam → labor advantage and cost optimization<br />
+                Mexico → proximity and logistics<br />
+                Japan → ultra-high precision and systems<br />
+                US → IP ownership, advanced manufacturing, and high-value assembly
+              </p>
+
+              <p>
+                Taiwan sits in a layer most people overlook: the balance between
+                precision, flexibility, and consistent execution. Not the
+                cheapest nor the most extreme.
+              </p>
+
+              <p>
+                But often the most reliable part of the system when things
+                actually need to work.
+              </p>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+    <script>
+      const carousels = Array.from(
+        document.querySelectorAll("[data-carousel]"),
+      );
+
+      carousels.forEach((carouselRoot) => {
+        const carouselImage = carouselRoot.querySelector(
+          "[data-carousel-image]",
+        ) as HTMLImageElement | null;
+        const carouselThumbs = Array.from(
+          carouselRoot.querySelectorAll("[data-carousel-thumb]"),
+        );
+        const carouselStatus = carouselRoot.querySelector(
+          "[data-carousel-status]",
+        );
+
+        const carouselImages = carouselThumbs.map((thumb) => {
+          const img = thumb.querySelector("img") as HTMLImageElement | null;
+
+          return {
+            src: img?.getAttribute("src") ?? "",
+            alt: img?.getAttribute("alt") ?? "",
+          };
+        });
+
+        let carouselIndex = 0;
+
+        function renderCarousel() {
+          if (!carouselImage || !carouselStatus || carouselImages.length === 0)
+            return;
+
+          const current = carouselImages[carouselIndex];
+
+          carouselImage.src = current.src;
+          carouselImage.alt = current.alt;
+          carouselStatus.textContent = `${carouselIndex + 1} / ${carouselImages.length}`;
+
+          carouselThumbs.forEach((thumb, index) => {
+            thumb.classList.toggle("active", index === carouselIndex);
+          });
+        }
+
+        carouselThumbs.forEach((thumb, index) => {
+          thumb.addEventListener("click", () => {
+            carouselIndex = index;
+            renderCarousel();
+          });
+        });
+
+        renderCarousel();
+      });
+    </script>
+  </body>
+</html>
