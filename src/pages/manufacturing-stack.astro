@@ -1,0 +1,478 @@
+---
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Manufacturing Stack — Bert Liu</title>
+    <style>
+      :root {
+        --bg: #f7f4ed;
+        --text: #1f1f1b;
+        --muted: #4e4a42;
+        --line: #d8d2c5;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        overflow-y: scroll;
+        scrollbar-gutter: stable;
+      }
+
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.65;
+      }
+
+      h1,
+      h2,
+      h3,
+      nav,
+      .intro-links {
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+      }
+
+      .page {
+        width: min(1100px, 100%);
+        margin: 0 auto;
+        padding: 40px 24px 80px;
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        column-gap: 56px;
+      }
+
+      nav {
+        position: sticky;
+        top: 48px;
+        align-self: start;
+        width: 180px;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        padding-bottom: 2px;
+      }
+
+      nav a:hover,
+      nav a:focus-visible {
+        color: var(--text);
+        border-bottom-color: var(--line);
+      }
+
+      nav a[aria-current="page"] {
+        color: var(--text);
+        font-weight: 600;
+        border-bottom-color: var(--line);
+      }
+
+      main {
+        grid-column: 2;
+        max-width: 750px;
+      }
+
+      .intro {
+        padding: 0 0 28px;
+      }
+
+      .intro-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 16px;
+        margin: 0 0 4px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2.1rem, 5vw, 3rem);
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        line-height: 1.05em;
+      }
+
+      .intro-links {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .intro-links a {
+        color: var(--muted);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        padding-bottom: 1px;
+      }
+
+      .intro-links a:hover,
+      .intro-links a:focus-visible {
+        color: var(--text);
+        border-bottom-color: var(--line);
+      }
+
+      .intro p,
+      p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .intro p {
+        max-width: 60ch;
+        font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+      }
+
+      section {
+        padding: 36px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      h2 {
+        margin: 0 0 12px;
+        font-size: 1.45rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+
+      .stack-intro p + p {
+        margin-top: 14px;
+      }
+
+      .stack-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+      }
+
+      .stack-table th,
+      .stack-table td {
+        text-align: left;
+        vertical-align: top;
+        padding: 14px 24px 14px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .stack-table th:last-child,
+      .stack-table td:last-child {
+        padding-right: 0;
+      }
+
+      .stack-table thead th {
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        border-top: none;
+        border-bottom: 1px solid var(--line);
+        padding-top: 0;
+        color: var(--text);
+        font-weight: 600;
+        font-size: 0.8rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .stack-table thead th:nth-child(1) {
+        width: 16%;
+      }
+
+      .stack-table thead th:nth-child(2),
+      .stack-table thead th:nth-child(3) {
+        width: 42%;
+      }
+
+      .stack-table tbody th {
+        color: var(--text);
+        font-weight: 700;
+        white-space: nowrap;
+        padding-right: 28px;
+      }
+
+      .stack-table td {
+        color: var(--muted);
+      }
+
+      .stack-table tbody tr:first-child th,
+      .stack-table tbody tr:first-child td {
+        border-top: none;
+        padding-top: 18px;
+      }
+
+      @media (max-width: 900px) {
+        .page {
+          display: block;
+          padding: 20px 20px 56px;
+        }
+
+        nav {
+          position: static;
+          width: auto;
+          margin-bottom: 24px;
+          border-bottom: 1px solid var(--line);
+          padding-bottom: 12px;
+        }
+
+        nav ul {
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 10px 18px;
+        }
+
+        .intro-head {
+          align-items: flex-end;
+          flex-wrap: wrap;
+          margin-bottom: 10px;
+        }
+
+        section {
+          padding: 28px 0;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .stack-table thead {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          margin: -1px;
+          padding: 0;
+          overflow: hidden;
+          clip: rect(0 0 0 0);
+          border: 0;
+        }
+
+        .stack-table,
+        .stack-table tbody,
+        .stack-table tr,
+        .stack-table th,
+        .stack-table td {
+          display: block;
+          width: 100%;
+        }
+
+        .stack-table tr {
+          border-top: 1px solid var(--line);
+          padding: 20px 0;
+        }
+
+        .stack-table tbody tr:first-child {
+          border-top: none;
+        }
+
+        .stack-table th,
+        .stack-table td {
+          border: none;
+          padding: 0;
+        }
+
+        .stack-table tbody tr:first-child th,
+        .stack-table tbody tr:first-child td {
+          padding-top: 0;
+        }
+
+        .stack-table tbody th {
+          font-size: 1.1rem;
+          white-space: normal;
+          margin-bottom: 12px;
+        }
+
+        .stack-table td {
+          margin-top: 12px;
+        }
+
+        .stack-table td::before {
+          content: attr(data-label);
+          display: block;
+          font-family:
+            Inter,
+            ui-sans-serif,
+            system-ui,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+          font-size: 0.72rem;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          color: var(--text);
+          margin-bottom: 3px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="/">Field Notes</a></li>
+          <li><a href="/manufacturing-stack" aria-current="page">Manufacturing Stack</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <header class="intro">
+          <div class="intro-head">
+            <h1>Bert Liu</h1>
+            <div class="intro-links" aria-label="Social links">
+              <a
+                href="https://www.linkedin.com/in/bert-liu-8b3a2323/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn">in</a
+              >
+              <a
+                href="https://www.instagram.com/bertbuilds/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram">ig</a
+              >
+              <a href="mailto:bert@bertliu.com" aria-label="Email">✉</a>
+            </div>
+          </div>
+          <p>Manufacturing in Taiwan. Notes on factories, systems, and supply chains.</p>
+        </header>
+
+        <section class="stack-intro">
+          <h2>How I think about manufacturing</h2>
+          <p>Problems rarely stay in the process where they start.</p>
+          <p>
+            A casting issue can show up later in finishing. Surface prep can decide whether coating works. 
+            Inspection is often where trust is either protected or lost.
+          </p>
+          <p>
+            I use this page to map the production layers I’m building relationships around: materials, forming, machining, finishing, inspection, assembly, and logistics.
+          </p>
+          <p>
+            My focus is the handoff between those layers — where risk appears, where specialists matter, and where control needs to stay close.
+          </p>
+        </section>
+
+        <section class="stack-table-wrap">
+          <table class="stack-table">
+            <thead>
+              <tr>
+                <th scope="col">Layer</th>
+                <th scope="col">Common examples</th>
+                <th scope="col">Why it matters</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Material</th>
+                <td data-label="Common examples">
+                  Aluminum, zinc, steel, stainless steel, plastics, copper
+                  alloys, recycled vs. virgin inputs
+                </td>
+                <td data-label="Why it matters">
+                  Strength, weight, cost, corrosion resistance, thermal behavior,
+                  surface compatibility
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Forming</th>
+                <td data-label="Common examples">
+                  Die casting, gravity casting, investment casting, stamping,
+                  injection molding
+                </td>
+                <td data-label="Why it matters">
+                  Shape, tooling cost, production volume, porosity risk,
+                  shrinkage, repeatability
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Machining</th>
+                <td data-label="Common examples">
+                  CNC, drilling, tapping, honing, datum features, tight-tolerance
+                  surfaces
+                </td>
+                <td data-label="Why it matters">
+                  Precision, fit, threads, sealing areas, bore finish, assembly
+                  alignment
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Surface prep</th>
+                <td data-label="Common examples">
+                  Trimming, deburring, tumbling, bead blasting, cleaning
+                </td>
+                <td data-label="Why it matters">
+                  Burr control, adhesion, appearance, coating consistency,
+                  paint/anodizing readiness
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Finishing</th>
+                <td data-label="Common examples">
+                  Painting, powder coating, anodizing, nickel plating,
+                  passivation, masking
+                </td>
+                <td data-label="Why it matters">
+                  Durability, color, corrosion resistance, coating thickness,
+                  conductivity, wear resistance, feel, customer perception
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Inspection / testing</th>
+                <td data-label="Common examples">
+                  X-ray, CMM, dimensional checks, leakage testing, MEK rub test,
+                  salt spray testing, material certs
+                </td>
+                <td data-label="Why it matters">
+                  Hidden defects, tolerance control, coating adhesion/cure,
+                  corrosion resistance, documentation, customer trust
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Assembly / logistics</th>
+                <td data-label="Common examples">
+                  Component assembly, packaging, staging, shipping, production
+                  coordination
+                </td>
+                <td data-label="Why it matters">
+                  Delivery reliability, handling damage, supplier handoffs, field
+                  performance
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

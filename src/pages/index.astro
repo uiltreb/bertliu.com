@@ -11,6 +11,12 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Bert Liu</title>
     <style>
       :root {
@@ -208,12 +214,88 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
         border: 1px solid var(--line);
       }
 
-      .article-images video {
+      .video-card {
+        position: relative;
         display: block;
         width: 100%;
-        height: auto;
+        margin: 0;
+        padding: 0;
+        aspect-ratio: 4 / 6;
         border: 1px solid var(--line);
         background: #000;
+        cursor: pointer;
+        overflow: hidden;
+      }
+
+      .video-card img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: none;
+        display: block;
+      }
+
+      .video-card__play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        background: rgba(20, 20, 18, 0.6);
+        display: grid;
+        place-items: center;
+        transition: background 0.15s ease;
+      }
+
+      .video-card:hover .video-card__play,
+      .video-card:focus-visible .video-card__play {
+        background: rgba(20, 20, 18, 0.82);
+      }
+
+      .video-card__play svg {
+        width: 22px;
+        height: 22px;
+        margin-left: 2px;
+        fill: #fff;
+      }
+
+      .video-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background: rgba(15, 15, 12, 0.92);
+      }
+
+      .video-overlay[hidden] {
+        display: none;
+      }
+
+      .video-overlay__player {
+        max-width: min(1100px, 100%);
+        max-height: 88vh;
+        background: #000;
+      }
+
+      .video-overlay__close {
+        position: absolute;
+        top: 14px;
+        right: 18px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.9rem;
+        line-height: 1;
+        color: #fff;
+        background: none;
+        border: none;
+        cursor: pointer;
       }
 
       .carousel-controls {
@@ -324,7 +406,7 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
       <nav aria-label="Main navigation">
         <ul>
           <li><a href="/" aria-current="page">Field Notes</a></li>
-          <li><a href="/capabilities">Capabilities</a></li>
+          <li><a href="/manufacturing-stack">Manufacturing Stack</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
       </nav>
@@ -367,12 +449,22 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
 
             <div class="feature-article">
               <div class="article-images">
-                <video
-                  controls
-                  preload="metadata"
-                  playsinline
-                  src="/videos/worklog/manufacturing_video_note_001.mp4"
-                ></video>
+                <button
+                  class="video-card"
+                  type="button"
+                  data-video-open
+                  data-video-src="/videos/worklog/manufacturing_video_note_001.mp4"
+                  aria-label="Play video: Why Smart Brands Don’t Build Everything"
+                >
+                  <img
+                    src="/videos/worklog/manufacturing_video_note_001-poster.jpg"
+                    alt="Bert on a die-casting factory floor beside stacked aluminum ingots."
+                    loading="lazy"
+                  />
+                  <span class="video-card__play" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                  </span>
+                </button>
               </div>
 
               <div class="article-body">
@@ -542,12 +634,22 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
 
             <div class="feature-article">
               <div class="article-images">
-                <video
-                  controls
-                  preload="metadata"
-                  playsinline
-                  src="/videos/worklog/bert-reshoring-observation-video.mp4"
-                ></video>
+                <button
+                  class="video-card"
+                  type="button"
+                  data-video-open
+                  data-video-src="/videos/worklog/bert-reshoring-observation-video.mp4"
+                  aria-label="Play video: Reshoring Doesn’t Mean Bringing Everything Back"
+                >
+                  <img
+                    src="/videos/worklog/bert-reshoring-observation-video-poster.jpg"
+                    alt="Bert in his workshop holding a small part, 3D printer in the background."
+                    loading="lazy"
+                  />
+                  <span class="video-card__play" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                  </span>
+                </button>
               </div>
 
               <div class="article-body">
@@ -732,6 +834,21 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
         </section>
       </main>
     </div>
+
+    <div class="video-overlay" data-video-overlay hidden>
+      <button
+        class="video-overlay__close"
+        type="button"
+        data-video-close
+        aria-label="Close video"
+      >×</button>
+      <video
+        class="video-overlay__player"
+        data-video-player
+        controls
+        playsinline
+      ></video>
+    </div>
     <script>
       const carousels = Array.from(
         document.querySelectorAll("[data-carousel]"),
@@ -782,6 +899,53 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
         });
 
         renderCarousel();
+      });
+
+      const videoOverlay = document.querySelector("[data-video-overlay]");
+      const videoPlayer = videoOverlay?.querySelector(
+        "[data-video-player]",
+      ) as HTMLVideoElement | null;
+      const videoOpeners = Array.from(
+        document.querySelectorAll("[data-video-open]"),
+      );
+
+      function closeVideo() {
+        if (!videoOverlay || !videoPlayer) return;
+        videoPlayer.pause();
+        videoPlayer.removeAttribute("src");
+        videoPlayer.load();
+        videoOverlay.setAttribute("hidden", "");
+        document.body.style.overflow = "";
+      }
+
+      videoOpeners.forEach((opener) => {
+        opener.addEventListener("click", () => {
+          if (!videoOverlay || !videoPlayer) return;
+          const src = opener.getAttribute("data-video-src");
+          if (!src) return;
+          videoPlayer.src = src;
+          videoOverlay.removeAttribute("hidden");
+          document.body.style.overflow = "hidden";
+          videoPlayer.play().catch(() => {});
+        });
+      });
+
+      videoOverlay
+        ?.querySelector("[data-video-close]")
+        ?.addEventListener("click", closeVideo);
+
+      videoOverlay?.addEventListener("click", (event) => {
+        if (event.target === videoOverlay) closeVideo();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (
+          event.key === "Escape" &&
+          videoOverlay &&
+          !videoOverlay.hasAttribute("hidden")
+        ) {
+          closeVideo();
+        }
       });
     </script>
   </body>
