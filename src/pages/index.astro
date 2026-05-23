@@ -11,13 +11,31 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
+    <title>Bert Liu — Taiwan Manufacturing Field Notes</title>
+    <meta
+      name="description"
+      content="Field notes from Taiwan’s factory floor for North American hardware teams navigating production, supplier coordination, and quality control."
     />
-    <title>Bert Liu</title>
+    <link rel="canonical" href="https://bertliu.com/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Bert Liu" />
+    <meta property="og:title" content="Bert Liu — Taiwan Manufacturing Field Notes" />
+    <meta
+      property="og:description"
+      content="Field notes from Taiwan’s factory floor for North American hardware teams navigating production, supplier coordination, and quality control."
+    />
+    <meta property="og:url" content="https://bertliu.com/" />
+    <meta property="og:image" content="https://bertliu.com/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bert Liu — Taiwan Manufacturing Field Notes" />
+    <meta
+      name="twitter:description"
+      content="Field notes from Taiwan’s factory floor for North American hardware teams navigating production, supplier coordination, and quality control."
+    />
+    <meta name="twitter:image" content="https://bertliu.com/og-image.jpg" />
     <style>
       :root {
         --bg: #f7f4ed;
@@ -51,7 +69,6 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
       .article-date,
       .carousel-status {
         font-family:
-          Inter,
           ui-sans-serif,
           system-ui,
           -apple-system,
@@ -123,7 +140,7 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
 
       h1 {
         margin: 0;
-        font-size: clamp(2.1rem, 5vw, 3rem);
+        font-size: clamp(2.1rem, 5vw, 2.4rem);
         font-weight: 500;
         letter-spacing: 0.01em;
         line-height: 1.05em;
@@ -149,12 +166,7 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
         border-bottom-color: var(--line);
       }
 
-      .intro p {
-        margin: 0;
-        max-width: 60ch;
-        color: var(--muted);
-        font-size: clamp(1.05rem, 2.2vw, 1.28rem);
-      }
+
 
       section {
         padding: 36px 0;
@@ -171,6 +183,19 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
       p {
         margin: 0;
         color: var(--muted);
+      }
+
+      .intro p {
+  margin: 0;
+  max-width: 70ch;
+  color: var(--muted);
+  font-size: 1.2rem;
+}
+
+      .intro .intro-positioning {
+        margin-top: 10px;
+        max-width: 70ch;
+        font-size: 1rem;
       }
 
       .feature-article {
@@ -220,7 +245,7 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
         width: 100%;
         margin: 0;
         padding: 0;
-        aspect-ratio: 4 / 6;
+        aspect-ratio: 3 / 2;
         border: 1px solid var(--line);
         background: #000;
         cursor: pointer;
