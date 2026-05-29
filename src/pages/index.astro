@@ -5,6 +5,11 @@ import manufacturingScale1 from "../assets/articles/bert-post-manufacturing-scal
 import manufacturingScale2 from "../assets/articles/bert-post-manufacturing-scale-2.png";
 import manufacturingScale3 from "../assets/articles/bert-post-manufacturing-scale-3.png";
 import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scale-4.png";
+import paintshopInspection from "../assets/articles/bert-paintshop-inspection.jpeg";
+import paintshopMasking from "../assets/articles/bert-paintshop-masking.jpeg";
+import paintshopGarminStandards from "../assets/articles/bert-paintshop-garmin-standards.jpeg";
+import cncAerospaceShowroom from "../assets/articles/bert-cnc-aerospace-supplier-showroom.jpeg";
+import cncAerospaceCertifications from "../assets/articles/bert-cnc-aerospace-supplier-certifications.jpeg";
 ---
 
 <html lang="en">
@@ -239,6 +244,10 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
         border: 1px solid var(--line);
       }
 
+      .article-images [hidden] {
+        display: none;
+      }
+
       .video-card {
         position: relative;
         display: block;
@@ -309,6 +318,24 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
         background: #000;
       }
 
+      .video-overlay__image {
+        display: block;
+        max-width: min(1100px, 100%);
+        max-height: 88vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        background: #000;
+      }
+
+      .video-overlay [hidden] {
+        display: none;
+      }
+
+      [data-carousel-image] {
+        cursor: zoom-in;
+      }
+
       .video-overlay__close {
         position: absolute;
         top: 14px;
@@ -330,6 +357,7 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
       }
 
       .carousel-thumb {
+        position: relative;
         width: 56px;
         height: 56px;
         padding: 0;
@@ -337,6 +365,26 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
         background: transparent;
         cursor: pointer;
         overflow: hidden;
+      }
+
+      .carousel-thumb-play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: rgba(20, 20, 18, 0.7);
+        display: grid;
+        place-items: center;
+      }
+
+      .carousel-thumb-play svg {
+        width: 10px;
+        height: 10px;
+        margin-left: 1px;
+        fill: #fff;
       }
 
       .carousel-thumb img {
@@ -462,6 +510,302 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
         </header>
 
         <section id="worklog">
+          <article class="worklog-post">
+            <div class="article-header">
+              <h3 class="article-title">
+                Aerospace CNC: The Documentation Is the Product
+              </h3>
+              <p class="article-date">
+                <strong>May 27, 2026</strong> · Taiwan · Aerospace / CNC / Quality / Process Control
+              </p>
+            </div>
+            <div class="feature-article">
+              <div class="article-images" data-carousel>
+                <img
+                  data-carousel-image
+                  src={cncAerospaceShowroom.src}
+                  alt="Bert in Aerospace CNC showroom with titanium landing gear part and engine structural parts"
+                  loading="lazy"
+                />
+                <div
+                  class="carousel-controls"
+                  aria-label="Article image carousel controls"
+                >
+                  <button
+                    class="carousel-thumb active"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="0"
+                    aria-label="Show aerospace CNC showroom photo"
+                  >
+                    <img
+                      src={cncAerospaceShowroom.src}
+                      alt="Aerospace CNC showroom photo thumbnail"
+                      loading="lazy"
+                    />
+                  </button>
+                  <button
+                    class="carousel-thumb"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="1"
+                    aria-label="Show aerospace CNC certifications photo"
+                  >
+                    <img
+                      src={cncAerospaceCertifications.src}
+                      alt="Aerospace CNC supplier certifications photo thumbnail"
+                      loading="lazy"
+                    />
+                  </button>
+                  <span class="carousel-status" data-carousel-status>1 / 2</span
+                  >
+                </div>
+              </div>
+              <div class="article-body">
+                <p>
+                  I walked into the showroom and the first thing I noticed was the scale.
+                </p>
+
+                <p>
+                  Landing gear components. Engine structural parts. Heavy, precise, expensive to get wrong.
+                </p>
+
+                <p>
+                  I visited an aerospace CNC shop in Taiwan recently. 500+ people across multiple facilities. They started on smaller parts and built toward large workpiece capability over time.
+                </p>
+
+                <p>
+                  The production floor could not be filmed. Confidential programs. Confidential customers. Confidential geometries. AS9100 certified. NADCAP accredited.
+                </p>
+
+                <p>
+                  That confidentiality is part of what you’re buying when you qualify a supplier at this level.
+                </p>
+
+                <p>
+                  Cutting the part correctly is the baseline. Proving how it was cut, inspected, measured, controlled, and repeated is what aerospace customers are paying for.
+                </p>
+
+                <p>
+                  Some parts can ship with documentation packages longer than their machining time: process logs, inspection records, material traceability.
+                </p>
+
+                <p>
+                  Not bureaucracy. The documentation is the product.
+                </p>
+
+                <p>
+                  Materials like Inconel do not behave like standard alloys. Tooling can cost several times more, and tool wear becomes a production risk variable, not just a maintenance item.
+                </p>
+
+                <p>
+                  One bad decision costs more than the scrap.
+                </p>
+
+                <p>
+                  During a difficult period, cost pressure nearly broke the business. A long-term anchor customer continued supporting the company and gave them room to survive, reinvest, and keep building capability.
+                </p>
+
+                <p>
+                  Standing in a showroom full of aerospace components, that context lands differently as those parts did not get there by accident. They got there through difficult programs, years of documentation discipline, and customers who trust them enough to stay when things get hard.
+                </p>
+
+                <p>
+                  The original founder was there during the visit. There was a straightforwardness about him. He knew the company needed different leadership to push through the next phase, so he made that call himself. Handed it to his partner and kept building.
+                </p>
+
+                <p>
+                  A polished CNC website tells you almost nothing. The management team in the room tells you more than the website ever will.
+                </p>
+
+                <p>
+                  Aerospace supplier capability is not just machines and certifications. It is what gets built around them over time. And the people who had the discipline to do it honestly.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="worklog-post">
+            <div class="article-header">
+              <h3 class="article-title">
+                Coating Field Notes: A Taiwan Finishing Operation
+              </h3>
+              <p class="article-date">
+                <strong>May 22, 2026</strong> · Taiwan · Coating / Surface Prep / Quality / Packaging
+              </p>
+            </div>
+
+            <div class="feature-article">
+              <div class="article-images" data-carousel>
+                <button
+                  class="video-card"
+                  type="button"
+                  data-video-open
+                  data-carousel-main-video
+                  data-video-src="/videos/worklog/manufacturing_video_note_2.mp4"
+                  aria-label="Play video: A Coating Spec Isn’t Coating Performance"
+                >
+                  <img
+                    src="/videos/worklog/manufacturing_video_note_2-poster.jpg"
+                    alt="Bert and a coating specialist at an inspection bench in a Taiwan paintshop, with a Garmin inspection chart behind them."
+                    loading="lazy"
+                  />
+                  <span class="video-card__play" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                  </span>
+                </button>
+
+                <img
+                  data-carousel-image
+                  src={paintshopInspection.src}
+                  alt="Inspecting parts on a workbench in a Taiwan paintshop."
+                  loading="lazy"
+                  hidden
+                />
+
+                <div
+                  class="carousel-controls"
+                  aria-label="Article media carousel controls"
+                >
+                  <button
+                    class="carousel-thumb active"
+                    type="button"
+                    data-carousel-thumb
+                    data-media-type="video"
+                    data-index="0"
+                    aria-label="Show paintshop video"
+                  >
+                    <img
+                      src="/videos/worklog/manufacturing_video_note_2-poster.jpg"
+                      alt="Paintshop video thumbnail"
+                      loading="lazy"
+                    />
+                    <span class="carousel-thumb-play" aria-hidden="true">
+                      <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                    </span>
+                  </button>
+
+                  <button
+                    class="carousel-thumb"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="1"
+                    aria-label="Show paintshop inspection photo"
+                  >
+                    <img
+                      src={paintshopInspection.src}
+                      alt="Inspecting parts on a workbench in a Taiwan paintshop."
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="carousel-thumb"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="2"
+                    aria-label="Show paintshop masking photo"
+                  >
+                    <img
+                      src={paintshopMasking.src}
+                      alt="Masking applied to parts before coating in a Taiwan paintshop."
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="carousel-thumb"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="3"
+                    aria-label="Show Garmin standards photo"
+                  >
+                    <img
+                      src={paintshopGarminStandards.src}
+                      alt="Garmin inspection standards posted on the paintshop wall."
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <span class="carousel-status" data-carousel-status>1 / 4</span>
+                </div>
+              </div>
+
+              <div class="article-body">
+                <p>A coating spec doesn’t guarantee coating performance.</p>
+
+                <p>“200°C for 20 minutes” is a target, not a confirmation.</p>
+
+                <p>
+                  I was reviewing a finishing process with one of our coating
+                  partners in Taiwan last week. They handle work across consumer
+                  electronics and motorcycle components — Garmin, Ducati, that
+                  range.
+                </p>
+
+                <p>
+                  Honestly there was too much to absorb in one visit. I’m still
+                  going back through the footage now.
+                </p>
+
+                <p>
+                  But one thing stood out immediately: how many steps are
+                  involved before and after the coating is actually done.
+                </p>
+
+                <p>It starts with pretreatment. Not the spray booth.</p>
+
+                <p>
+                  Aluminum uses trivalent chromium conversion. Steel uses
+                  phosphate. Immersion time, bath temperature, degreasing
+                  sequence, hanging method, fixture design. All controlled and
+                  posted on the wall where operators work. Not filed away
+                  somewhere.
+                </p>
+
+                <p>
+                  Inconsistent prep or cure conditions can produce a coating
+                  that looks fine on delivery and fails in the field. Peeling,
+                  corrosion, degraded performance. By the time it shows up, the
+                  part is already with the customer.
+                </p>
+
+                <p>
+                  Cure verification is not the same as cure specification. Oven
+                  air temperature and part temperature are not the same number.
+                  They verify actual conditions using profiling equipment —
+                  multiple sensors placed across different sections of the part
+                  as it moves through the line.
+                </p>
+
+                <p>
+                  Then there’s what happens after the booth. White discs, paper
+                  inserts, surface separators at the packing table. The shop
+                  started in IKEA lighting assembly before specializing in
+                  coatings. That background shows here. A correctly made part
+                  that arrives damaged is still a failure.
+                </p>
+
+                <p>
+                  One thing worth noting on materials: Taiwan has a mature
+                  coating supplier base. Most applications are covered locally.
+                  Global systems like AkzoNobel or PPG are accessible when
+                  customers specify them. The coating brand is one part of it.
+                  Everything around it still has to work.
+                </p>
+
+                <p>
+                  Most of this doesn’t appear in a capability presentation.
+                </p>
+
+                <p>
+                  If you’re evaluating a finishing supplier and want a second
+                  set of eyes on what to look for, feel free to reach out.
+                </p>
+              </div>
+            </div>
+          </article>
+
           <article class="worklog-post">
             <div class="article-header">
               <h3 class="article-title">
@@ -865,7 +1209,7 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
         class="video-overlay__close"
         type="button"
         data-video-close
-        aria-label="Close video"
+        aria-label="Close"
       >×</button>
       <video
         class="video-overlay__player"
@@ -873,6 +1217,13 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
         controls
         playsinline
       ></video>
+      <img
+        class="video-overlay__image"
+        data-overlay-image
+        src=""
+        alt=""
+        hidden
+      />
     </div>
     <script>
       const carousels = Array.from(
@@ -883,6 +1234,9 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
         const carouselImage = carouselRoot.querySelector(
           "[data-carousel-image]",
         ) as HTMLImageElement | null;
+        const carouselVideo = carouselRoot.querySelector(
+          "[data-carousel-main-video]",
+        ) as HTMLElement | null;
         const carouselThumbs = Array.from(
           carouselRoot.querySelectorAll("[data-carousel-thumb]"),
         );
@@ -890,10 +1244,11 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
           "[data-carousel-status]",
         );
 
-        const carouselImages = carouselThumbs.map((thumb) => {
+        const carouselItems = carouselThumbs.map((thumb) => {
           const img = thumb.querySelector("img") as HTMLImageElement | null;
 
           return {
+            type: thumb.getAttribute("data-media-type") || "image",
             src: img?.getAttribute("src") ?? "",
             alt: img?.getAttribute("alt") ?? "",
           };
@@ -902,14 +1257,21 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
         let carouselIndex = 0;
 
         function renderCarousel() {
-          if (!carouselImage || !carouselStatus || carouselImages.length === 0)
-            return;
+          if (!carouselStatus || carouselItems.length === 0) return;
 
-          const current = carouselImages[carouselIndex];
+          const current = carouselItems[carouselIndex];
 
-          carouselImage.src = current.src;
-          carouselImage.alt = current.alt;
-          carouselStatus.textContent = `${carouselIndex + 1} / ${carouselImages.length}`;
+          if (current.type === "video" && carouselVideo) {
+            carouselVideo.removeAttribute("hidden");
+            if (carouselImage) carouselImage.setAttribute("hidden", "");
+          } else if (carouselImage) {
+            carouselImage.src = current.src;
+            carouselImage.alt = current.alt;
+            carouselImage.removeAttribute("hidden");
+            if (carouselVideo) carouselVideo.setAttribute("hidden", "");
+          }
+
+          carouselStatus.textContent = `${carouselIndex + 1} / ${carouselItems.length}`;
 
           carouselThumbs.forEach((thumb, index) => {
             thumb.classList.toggle("active", index === carouselIndex);
@@ -930,15 +1292,28 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
       const videoPlayer = videoOverlay?.querySelector(
         "[data-video-player]",
       ) as HTMLVideoElement | null;
+      const overlayImage = videoOverlay?.querySelector(
+        "[data-overlay-image]",
+      ) as HTMLImageElement | null;
       const videoOpeners = Array.from(
         document.querySelectorAll("[data-video-open]"),
       );
+      const imageOpeners = Array.from(
+        document.querySelectorAll("[data-carousel-image]"),
+      );
 
-      function closeVideo() {
-        if (!videoOverlay || !videoPlayer) return;
-        videoPlayer.pause();
-        videoPlayer.removeAttribute("src");
-        videoPlayer.load();
+      function closeOverlay() {
+        if (!videoOverlay) return;
+        if (videoPlayer) {
+          videoPlayer.pause();
+          videoPlayer.removeAttribute("src");
+          videoPlayer.load();
+          videoPlayer.setAttribute("hidden", "");
+        }
+        if (overlayImage) {
+          overlayImage.removeAttribute("src");
+          overlayImage.setAttribute("hidden", "");
+        }
         videoOverlay.setAttribute("hidden", "");
         document.body.style.overflow = "";
       }
@@ -948,6 +1323,8 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
           if (!videoOverlay || !videoPlayer) return;
           const src = opener.getAttribute("data-video-src");
           if (!src) return;
+          if (overlayImage) overlayImage.setAttribute("hidden", "");
+          videoPlayer.removeAttribute("hidden");
           videoPlayer.src = src;
           videoOverlay.removeAttribute("hidden");
           document.body.style.overflow = "hidden";
@@ -955,12 +1332,38 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
         });
       });
 
+      imageOpeners.forEach((el) => {
+        const img = el as HTMLImageElement;
+        img.setAttribute("role", "button");
+        img.setAttribute("tabindex", "0");
+        img.setAttribute("aria-label", "Open image in full view");
+        const open = () => {
+          if (!videoOverlay || !overlayImage) return;
+          const src = img.getAttribute("src") ?? "";
+          const alt = img.getAttribute("alt") ?? "";
+          if (!src) return;
+          if (videoPlayer) videoPlayer.setAttribute("hidden", "");
+          overlayImage.src = src;
+          overlayImage.alt = alt;
+          overlayImage.removeAttribute("hidden");
+          videoOverlay.removeAttribute("hidden");
+          document.body.style.overflow = "hidden";
+        };
+        img.addEventListener("click", open);
+        img.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            open();
+          }
+        });
+      });
+
       videoOverlay
         ?.querySelector("[data-video-close]")
-        ?.addEventListener("click", closeVideo);
+        ?.addEventListener("click", closeOverlay);
 
       videoOverlay?.addEventListener("click", (event) => {
-        if (event.target === videoOverlay) closeVideo();
+        if (event.target === videoOverlay) closeOverlay();
       });
 
       document.addEventListener("keydown", (event) => {
@@ -969,7 +1372,7 @@ import manufacturingScale4 from "../assets/articles/bert-post-manufacturing-scal
           videoOverlay &&
           !videoOverlay.hasAttribute("hidden")
         ) {
-          closeVideo();
+          closeOverlay();
         }
       });
     </script>
