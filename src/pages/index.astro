@@ -10,6 +10,13 @@ import paintshopMasking from "../assets/articles/bert-paintshop-masking.jpeg";
 import paintshopGarminStandards from "../assets/articles/bert-paintshop-garmin-standards.jpeg";
 import cncAerospaceShowroom from "../assets/articles/bert-cnc-aerospace-supplier-showroom.jpeg";
 import cncAerospaceCertifications from "../assets/articles/bert-cnc-aerospace-supplier-certifications.jpeg";
+import computexCoolingEcosystem1 from "../assets/articles/bert-computex-cooling-ecosystem-1.jpeg";
+import computexCoolingEcosystem2 from "../assets/articles/bert-computex-cooling-ecosystem-2.jpeg";
+import computexCoolingEcosystem3 from "../assets/articles/bert-computex-cooling-ecosystem-3.jpeg";
+import computexCoolingEcosystem4 from "../assets/articles/bert-computex-cooling-ecosystem-4.jpeg";
+import computexCoolingEcosystem5 from "../assets/articles/bert-computex-cooling-ecosystem-5.jpeg";
+import computexCoolingEcosystem6 from "../assets/articles/bert-computex-cooling-ecosystem-6.jpeg";
+import computexCoolingEcosystem7 from "../assets/articles/bert-computex-cooling-ecosystem-7.jpeg";
 ---
 
 <html lang="en">
@@ -205,7 +212,7 @@ import cncAerospaceCertifications from "../assets/articles/bert-cnc-aerospace-su
 
       .feature-article {
         display: grid;
-        grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+        grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
         gap: 24px;
         align-items: start;
       }
@@ -235,11 +242,14 @@ import cncAerospaceCertifications from "../assets/articles/bert-cnc-aerospace-su
         margin: 0;
         display: grid;
         gap: 10px;
+        min-width: 0;
+        max-width: 100%;
       }
 
       .article-images img {
         display: block;
         width: 100%;
+        max-width: 100%;
         height: auto;
         border: 1px solid var(--line);
       }
@@ -354,6 +364,8 @@ import cncAerospaceCertifications from "../assets/articles/bert-cnc-aerospace-su
         display: flex;
         align-items: center;
         gap: 8px;
+        flex-wrap: wrap;
+        min-width: 0;
       }
 
       .carousel-thumb {
@@ -490,7 +502,7 @@ import cncAerospaceCertifications from "../assets/articles/bert-cnc-aerospace-su
             <h1>Bert Liu</h1>
             <div class="intro-links" aria-label="Social links">
               <a
-                href="https://www.linkedin.com/in/bert-liu-8b3a2323/"
+                href="https://www.linkedin.com/in/bertmfg/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn">in</a
@@ -510,6 +522,177 @@ import cncAerospaceCertifications from "../assets/articles/bert-cnc-aerospace-su
         </header>
 
         <section id="worklog">
+          <article class="worklog-post">
+            <div class="article-header">
+              <h3 class="article-title">
+                Computex Field Notes: AI Cooling Is a Manufacturing Capability Problem
+              </h3>
+              <p class="article-date">
+                <strong>June 4, 2026</strong> · Taipei, Taiwan · Computex / Manufacturing / Supplier Capability / Quality
+              </p>
+            </div>
+
+            <div class="feature-article">
+              <div class="article-images" data-carousel>
+                <img
+                  data-carousel-image
+                  src={computexCoolingEcosystem1.src}
+                  alt="Bert with a VAV Cooling R&D engineer at Computex, standing in front of stainless cooling components and manifolds."
+                  loading="lazy"
+                />
+
+                <div
+                  class="carousel-controls"
+                  aria-label="Article image carousel controls"
+                >
+                  <button
+                    class="carousel-thumb active"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="0"
+                    aria-label="Show VAV Cooling R&D booth photo"
+                  >
+                    <img
+                      src={computexCoolingEcosystem1.src}
+                      alt="VAV Cooling R&D booth photo thumbnail"
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="carousel-thumb"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="1"
+                    aria-label="Show Delta pump design concept photo"
+                  >
+                    <img
+                      src={computexCoolingEcosystem2.src}
+                      alt="Exploded view of Delta pump design concept for AI cooling infrastructure."
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="carousel-thumb"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="2"
+                    aria-label="Show Delta hybrid liquid cooling built-in LTA solution photo"
+                  >
+                    <img
+                      src={computexCoolingEcosystem3.src}
+                      alt="Delta hybrid liquid cooling built-in LTA solution."
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="carousel-thumb"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="3"
+                    aria-label="Show welded leak-proof joint photo"
+                  >
+                    <img
+                      src={computexCoolingEcosystem4.src}
+                      alt="Close-up of a welded stainless joint for leak-proof cooling construction."
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="carousel-thumb"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="4"
+                    aria-label="Show manifold construction photo"
+                  >
+                    <img
+                      src={computexCoolingEcosystem5.src}
+                      alt="Construction of a stainless manifold with multiple threaded ports."
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="carousel-thumb"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="5"
+                    aria-label="Show cold plate connector photo"
+                  >
+                    <img
+                      src={computexCoolingEcosystem6.src}
+                      alt="Connectors for cold plate liquid cooling applications."
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="carousel-thumb"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="6"
+                    aria-label="Show stainless welded sintered net construction photo"
+                  >
+                    <img
+                      src={computexCoolingEcosystem7.src}
+                      alt="Stainless construction with welded sintered net and vapor-weave style structure."
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <span class="carousel-status" data-carousel-status>1 / 7</span>
+                </div>
+              </div>
+
+              <div class="article-body">
+                <p>
+                  Three days into Computex, one pattern kept showing up: AI cooling is attracting expertise from unexpected places.
+                </p>
+
+                <p>
+                  Walking through booths focused on CDUs, cold plates, manifolds, pumps, immersion cooling, and two-phase systems, many of the strongest players were leveraging capabilities they had already built elsewhere.
+                </p>
+
+                <p>
+                  Delta is applying decades of experience in motors, power electronics, and thermal management to cooling infrastructure.
+                </p>
+
+                <p>
+                  I also met founders who previously worked at larger companies and are now building businesses around specific cooling bottlenecks.
+                </p>
+
+                <p>
+                  What stood out was not the cooling technology itself. It was where the underlying capability comes from.
+                </p>
+
+                <p>
+                  A cooling demo is relatively easy. But a system that runs 24/7 in a customer environment for years without leaks, contamination issues, service headaches, or reliability failures is a completely different challenge.
+                </p>
+
+                <p>
+                  That is less of a thermal problem and more of a manufacturing, quality, and supplier capability problem.
+                </p>
+
+                <p>When evaluating suppliers, that is what I find myself paying attention to:</p>
+
+                <ul class="article-list">
+                  <li>How do they validate reliability?</li>
+                  <li>How do they leak-test?</li>
+                  <li>Which components are actually made in-house?</li>
+                  <li>What kind of talent is required?</li>
+                  <li>What parts of the system are outsourced?</li>
+                  <li>What happens when something fails in the field?</li>
+                </ul>
+
+                <p>
+                  Most teams can compare spec sheets. What is harder is determining whether a supplier can consistently execute once real production and customer requirements begin.
+                </p>
+              </div>
+            </div>
+          </article>
           <article class="worklog-post">
             <div class="article-header">
               <h3 class="article-title">
