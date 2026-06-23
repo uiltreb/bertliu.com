@@ -28,6 +28,11 @@ import nctSheetFab4 from "../assets/articles/bert-NCT-sheet-fab-4.jpeg";
 import nctSheetFab5 from "../assets/articles/bert-NCT-sheet-fab-5.jpeg";
 import nctSheetFab6 from "../assets/articles/bert-NCT-sheet-fab-6.jpeg";
 import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
+import metalAdditiveManufacturing1 from "../assets/articles/bert-metal-additive-manufacturing-1.jpeg";
+import metalAdditiveManufacturing2 from "../assets/articles/bert-metal-additive-manufacturing-2.jpeg";
+import metalAdditiveManufacturing3 from "../assets/articles/bert-metal-additive-manufacturing-3.jpeg";
+import metalAdditiveManufacturing4 from "../assets/articles/bert-metal-additive-manufacturing-4.jpeg";
+import metalAdditiveManufacturing5 from "../assets/articles/bert-metal-additive-manufacturing-5.jpeg";
 ---
 
 <html lang="en">
@@ -37,7 +42,7 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
     <title>Bert Liu — Taiwan Manufacturing Field Notes</title>
     <meta
       name="description"
-      content="Field notes from Taiwan’s factory floor for North American hardware teams navigating production, supplier coordination, and quality control."
+            content="Notes from Taiwan’s factory floor, for hardware teams sourcing here. Field notes on suppliers, manufacturing processes, quality control, and production tradeoffs."
     />
     <link rel="canonical" href="https://bertliu.com/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -430,6 +435,85 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
         margin-top: 14px;
       }
 
+      .article-body a {
+        color: var(--text);
+        text-decoration: none;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 1px;
+      }
+
+      .article-body a:hover,
+      .article-body a:focus-visible {
+        border-bottom-color: var(--text);
+      }
+
+.article-more {
+  margin-top: 16px;
+}
+
+.article-more summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  color: var(--text);
+  cursor: pointer;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: 0.92rem;
+  font-weight: 650;
+  line-height: 1.2;
+  border-bottom: 1px solid var(--line);
+  list-style: none;
+}
+
+.article-more summary::-webkit-details-marker {
+  display: none;
+}
+
+.article-more summary::after {
+  content: "↓";
+  font-size: 0.85rem;
+}
+
+.article-more[open] .summary-open {
+  display: inline;
+}
+
+.article-more[open] .summary-closed {
+  display: none;
+}
+
+.article-more:not([open]) .summary-open {
+  display: none;
+}
+
+.article-more[open] summary::after {
+  content: "↑";
+}
+
+
+.article-more[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-more[open] summary {
+  order: 2;
+  margin-top: 16px;
+}
+
+.article-more[open] p,
+.article-more[open] ul,
+.article-more[open] ol {
+  order: 1;
+}
+
       .article-list {
         margin: 10px 0 14px 20px;
         padding: 0;
@@ -528,11 +612,130 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
             </div>
           </div>
           <p>
-            Manufacturing in Taiwan. Notes on factories, systems, and supply chains.
+            Notes from Taiwan's factory floor, for hardware teams sourcing here.
           </p>
         </header>
 
         <section id="worklog">
+          <article class="worklog-post">
+            <div class="article-header">  
+              <h3 class="article-title">
+                Don't Romanticize Metal 3D Printing
+              </h3>
+              <p class="article-date">
+                <strong>June 17, 2026</strong> · Taiwan · Metal Additive Manufacturing / DFM / Post-Processing / Manufacturing Economics
+              </p>
+            </div>
+
+            <div class="feature-article">
+              <div class="article-images" data-carousel>
+                <img
+                  data-carousel-image
+                  src={metalAdditiveManufacturing1.src}
+                  alt="Metal additive manufacturing build plate with printed parts."
+                  loading="lazy"
+                />
+
+                <div
+                  class="carousel-controls"
+                  aria-label="Article image carousel controls"
+                >
+                  <button
+                    class="carousel-thumb active"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="0"
+                    aria-label="Show metal additive manufacturing build plate photo"
+                  >
+                    <img
+                      src={metalAdditiveManufacturing1.src}
+                      alt="Metal additive manufacturing build plate photo thumbnail"
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="carousel-thumb"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="1"
+                    aria-label="Show metal AM parts and support structures photo"
+                  >
+                    <img
+                      src={metalAdditiveManufacturing2.src}
+                      alt="Metal AM parts and support structures photo thumbnail"
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="carousel-thumb"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="2"
+                    aria-label="Show metal 3D printed surface finish photo"
+                  >
+                    <img
+                      src={metalAdditiveManufacturing3.src}
+                      alt="Metal 3D printed surface finish photo thumbnail"
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="carousel-thumb"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="3"
+                    aria-label="Show metal additive manufacturing post-processing photo"
+                  >
+                    <img
+                      src={metalAdditiveManufacturing4.src}
+                      alt="Metal additive manufacturing post-processing photo thumbnail"
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="carousel-thumb"
+                    type="button"
+                    data-carousel-thumb
+                    data-index="4"
+                    aria-label="Show finished metal AM parts photo"
+                  >
+                    <img
+                      src={metalAdditiveManufacturing5.src}
+                      alt="Finished metal AM parts photo thumbnail"
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <span class="carousel-status" data-carousel-status>1 / 5</span>
+                </div>
+              </div>
+
+              <div class="article-body">
+                <p>It's not press print.</p>
+
+                <p>Spent some time on a metal AM floor recently. What stuck:</p>
+
+                <ul class="article-list">
+                  <li>The laser is one piece. The real work is the whole build strategy, before and after the print.</li>
+                  <li>It earns its place when the geometry does something a machined part can't.</li>
+                  <li>The tradeoffs are real: build time, surface finish, distortion, post-processing.</li>
+                  <li>The question isn't "can we print this." It's "can we print it, control distortion, get it off the plate, and make the economics work."</li>
+                </ul>
+
+                <p>
+                  Metal AM isn't replacing CNC, casting, or molding. It's what you reach for when those hit a wall.
+                </p>
+
+                <p>
+                  Working through manufacturing or supply-chain decisions in Taiwan? <a href="/contact">Get in touch.</a>
+                </p>
+              </div>
+            </div>
+          </article>
           <article class="worklog-post">
             <div class="article-header">
               <h3 class="article-title">
@@ -670,13 +873,14 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
                 <p>
                   That is the part I care about most, so I spend time on the floor.
                 </p>
-
+              
                 <p>
-                  It starts before any machine runs: the sheet itself. Right gauge, right finish, right material — no quiet substitution that nobody flags until it shows up as a field failure.
+                  It starts before any machine runs: the sheet itself. Right gauge, right finish, right material, no quiet substitution that nobody flags until it shows up as a field failure.
                 </p>
-
+                <details class="article-more">
+                  <summary><span class="summary-closed">Continue reading</span><span class="summary-open">Collapse note</span></summary>
                 <p>
-                  Then the part lives on a screen for a while. Sitting with the engineer over the DFM, you catch the spec problems while they are still pixels — the feature that fights the tooling, the tolerance that will not hold, the drawing decision that turns into production pain later.
+                  Then the part lives on a screen for a while. Sitting with the engineer over the DFM, you catch the spec problems while they are still pixels: the feature that fights the tooling, the tolerance that will not hold, the drawing decision that turns into production pain later.
                 </p>
 
                 <p>
@@ -684,7 +888,7 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
                 </p>
 
                 <p>
-                  Then bending. Then welding — hardware onto the formed panel, where heat and fixturing decide whether it stays flat or pulls out of tolerance.
+                  Then bending. Then welding hardware onto the formed panel, where heat and fixturing decide whether it stays flat or pulls out of tolerance.
                 </p>
 
                 <p>
@@ -692,20 +896,10 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
                 </p>
 
                 <p>
-                  But the real question is whether the thousandth part is as good as the first — and whether someone catches the drift before it ships.
+                  But the real question is whether the thousandth part is as good as the first. Whether someone catches the drift before it ships.
                 </p>
 
-                <p>
-                  When the stakes are high and the customer is an ocean away, the value is not a quality report after the fact. It is someone in the room who knows what correct looks like at each step, and catches the problem while there is still time to fix it.
-                </p>
-
-                <p>
-                  I can do that because I have been hands-on with the process and learned where the details and bottlenecks really show up. You cannot understand that only by watching from a distance.
-                </p>
-
-                <p>
-                  That is the work.
-                </p>
+              </details>
               </div>
             </div>
           </article>
@@ -813,6 +1007,9 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
                   This fan sits near the camera area because that’s one of the few places with usable volume left once cameras, batteries, processors, antennas, and everything else are fighting for space.
                 </p>
 
+                <details class="article-more">
+                  <summary><span class="summary-closed">Continue reading</span><span class="summary-open">Collapse note</span></summary>
+
                 <p>
                   But the more interesting detail was what happens after the fan moves air.
                 </p>
@@ -826,11 +1023,7 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
                 </p>
 
                 <p>
-                  At that scale, cooling is not just a thermal problem.
-                </p>
-
-                <p>
-                  It is a packaging and manufacturing problem.
+                  At that scale, cooling is a packaging problem, not just a thermal one.
                 </p>
 
                 <p>
@@ -838,12 +1031,9 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
                 </p>
 
                 <p>
-                  One pattern I noticed throughout Computex: the most interesting engineering is not always the newest technology.
+                  The most interesting engineering at Computex wasn't the newest tech. It was pushing existing tech to its limit in a space where every millimeter is already taken.
                 </p>
-
-                <p>
-                  Sometimes it is pushing an existing technology right to its limit inside a space where every millimeter is already taken.
-                </p>
+              </details>
               </div>
             </div>
           </article>
@@ -988,17 +1178,19 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
                 <p>
                   I also met founders who previously worked at larger companies and are now building businesses around specific cooling bottlenecks.
                 </p>
-
+                <details class="article-more">
+                  <summary><span class="summary-closed">Continue reading</span><span class="summary-open">Collapse note</span></summary>
                 <p>
                   What stood out was not the cooling technology itself. It was where the underlying capability comes from.
                 </p>
+              
 
                 <p>
                   A cooling demo is relatively easy. But a system that runs 24/7 in a customer environment for years without leaks, contamination issues, service headaches, or reliability failures is a completely different challenge.
                 </p>
 
                 <p>
-                  That is less of a thermal problem and more of a manufacturing, quality, and supplier capability problem.
+                  That's a manufacturing and supplier-capability problem, not a thermal one.
                 </p>
 
                 <p>When evaluating suppliers, that is what I find myself paying attention to:</p>
@@ -1015,6 +1207,7 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
                 <p>
                   Most teams can compare spec sheets. What is harder is determining whether a supplier can consistently execute once real production and customer requirements begin.
                 </p>
+                </details>
               </div>
             </div>
           </article>
@@ -1085,6 +1278,8 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
                 <p>
                   The production floor could not be filmed. Confidential programs. Confidential customers. Confidential geometries. AS9100 certified. NADCAP accredited.
                 </p>
+                <details class="article-more">
+                  <summary><span class="summary-closed">Continue reading</span><span class="summary-open">Collapse note</span></summary>
 
                 <p>
                   That confidentiality is part of what you’re buying when you qualify a supplier at this level.
@@ -1115,20 +1310,10 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
                 </p>
 
                 <p>
-                  Standing in a showroom full of aerospace components, that context lands differently as those parts did not get there by accident. They got there through difficult programs, years of documentation discipline, and customers who trust them enough to stay when things get hard.
-                </p>
-
-                <p>
                   The original founder was there during the visit. There was a straightforwardness about him. He knew the company needed different leadership to push through the next phase, so he made that call himself. Handed it to his partner and kept building.
                 </p>
+                </details>
 
-                <p>
-                  A polished CNC website tells you almost nothing. The management team in the room tells you more than the website ever will.
-                </p>
-
-                <p>
-                  Aerospace supplier capability is not just machines and certifications. It is what gets built around them over time. And the people who had the discipline to do it honestly.
-                </p>
               </div>
             </div>
           </article>
@@ -1247,7 +1432,7 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
                 <p>
                   I was reviewing a finishing process with one of our coating
                   partners in Taiwan last week. They handle work across consumer
-                  electronics and motorcycle components — Garmin, Ducati, that
+                  electronics and motorcycle components: Garmin, Ducati, that
                   range.
                 </p>
 
@@ -1260,6 +1445,9 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
                   But one thing stood out immediately: how many steps are
                   involved before and after the coating is actually done.
                 </p>
+
+                <details class="article-more">
+                  <summary><span class="summary-closed">Continue reading</span><span class="summary-open">Collapse note</span></summary>
 
                 <p>It starts with pretreatment. Not the spray booth.</p>
 
@@ -1281,7 +1469,7 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
                 <p>
                   Cure verification is not the same as cure specification. Oven
                   air temperature and part temperature are not the same number.
-                  They verify actual conditions using profiling equipment —
+                  They verify actual conditions using profiling equipment,
                   multiple sensors placed across different sections of the part
                   as it moves through the line.
                 </p>
@@ -1305,11 +1493,8 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
                 <p>
                   Most of this doesn’t appear in a capability presentation.
                 </p>
+                </details>
 
-                <p>
-                  If you’re evaluating a finishing supplier and want a second
-                  set of eyes on what to look for, feel free to reach out.
-                </p>
               </div>
             </div>
           </article>
@@ -1475,7 +1660,7 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
 
                 <p>
                   To me, there are usually three paths: full in-house, full
-                  outsource, or the middle path — validate trusted suppliers,
+                  outsource, or the middle path... validate trusted suppliers,
                   forecast demand, and keep only critical layers in-house.
                 </p>
 
@@ -1484,16 +1669,6 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
                   whose original engine is still brand, product, and audience.
                 </p>
 
-                <p>
-                  The goal isn’t to outsource everything or build everything.
-                  It’s to know what to protect, what to outsource, and when to
-                  scale each layer.
-                </p>
-
-                <p>
-                  If you’re thinking through similar manufacturing scaling
-                  decisions, feel free to reach out.
-                </p>
               </div>
             </div>
           </article>
@@ -1546,7 +1721,8 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
                   <li>critical dimensions</li>
                   <li>anything that protects real IP</li>
                 </ul>
-
+                <details class="article-more">
+                  <summary><span class="summary-closed">Continue reading</span><span class="summary-open">Collapse note</span></summary>
                 <p>
                   Other things may still be better handled by the right
                   specialists:
@@ -1565,12 +1741,7 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
                   So I don’t think the answer is full outsourcing or full
                   reshoring.
                 </p>
-
-                <p>
-                  I think the real competitive advantage is knowing what to
-                  protect, what to outsource, and how to split the risk without
-                  losing the product.
-                </p>
+                </details>
               </div>
             </div>
           </article>
@@ -1654,10 +1825,7 @@ import nctSheetFab7 from "../assets/articles/bert-NCT-sheet-fab-7.jpeg";
                   shape at scale, then machining where tolerances actually
                   matter.
                 </p>
-                <p>
-                  That is where real manufacturing capability shows up. Not all
-                  precision is created equal.
-                </p>
+
               </div>
             </div>
           </article>
